@@ -9,16 +9,6 @@ const Hero = () => {
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <div className="bg-black absolute inset-0 opacity-40 z-10"></div>
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          {/* <source src={video} type="video/mp4" /> */}
-          Your browser does not support the video tag.
-        </video>
       </div>
 
       {/* Content */}
