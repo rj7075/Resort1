@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await api.get("/auth/me"); // backend should verify JWT and return user
+        const res = await api.get("/api/auth/me"); // backend should verify JWT and return user
         if (res.data?.user) setUser(res.data.user);
       } catch {
         setUser(null);
@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const logout = async () => {
-    await api.post("/auth/logout");
+    await api.post("/api/auth/logout");
     setUser(null);
   };
 

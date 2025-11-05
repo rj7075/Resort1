@@ -11,7 +11,7 @@ const Navbar = () => {
   const { user, logout, setUser } = useAuth();
 
   const handleLogout = async () => {
-    await api.post("/auth/logout");
+    await api.post("api/auth/logout");
     toast.success("Logout Successfully");
     setUser(null);
   };

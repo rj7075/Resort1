@@ -12,7 +12,7 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await api.post("/auth/register", form);
+      const res = await api.post("/api/auth/register", form);
       setUser(res.data.user);
       toast.success("Registration Successful");
       navigate("/dashboard");

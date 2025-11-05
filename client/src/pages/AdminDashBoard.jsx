@@ -10,7 +10,7 @@ const AdminDashBoard = () => {
 
   //  Fetch all users
   const fetchUsers = async () => {
-    const res = await api.get("http://localhost:5000/api/users");
+    const res = await api.get("api/users");
     setUsers(res.data.users);
   };
 
@@ -33,7 +33,7 @@ const AdminDashBoard = () => {
   // Update user
   const handleUpdate = async () => {
     try {
-      await api.put(`/users/${editingUser._id}`, form);
+      await api.put(`api/users/${editingUser._id}`, form);
       setShowModal(false);
       setEditingUser(null);
       fetchUsers();
@@ -60,7 +60,7 @@ const AdminDashBoard = () => {
               className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600"
               onClick={async () => {
                 try {
-                  await api.delete(`/users/${id}`);
+                  await api.delete(`/api/users/${id}`);
                   fetchUsers();
                   toast.success("User deleted successfully!");
                 } catch (err) {
