@@ -1,15 +1,18 @@
 // src/components/Hero.jsx
 import React from "react";
 import { Link } from "react-router-dom";
-import video from "../assets/video.mp4";
 
 const Hero = () => {
+  const heroImageUrl =
+    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1470&q=80"; // default resort image
+
   return (
-    <div className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background */}
-      <div className="absolute inset-0 z-0">
-        <div className="bg-black absolute inset-0 opacity-40 z-10"></div>
-      </div>
+    <div
+      className="relative h-screen flex items-center justify-center overflow-hidden bg-cover bg-center"
+      style={{ backgroundImage: `url(${heroImageUrl})` }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black opacity-40 z-10"></div>
 
       {/* Content */}
       <div className="relative z-20 text-center px-4 text-white max-w-4xl">
