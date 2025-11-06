@@ -1,5 +1,5 @@
-import "dotenv/config"; // Loads environment variables
 import express from "express";
+import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import cors from "cors";
@@ -8,15 +8,18 @@ import cors from "cors";
 import authRoutes from "./routes/authRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 
+dotenv.config();
+
 const app = express();
 
 // Middleware
 app.use(express.json());
 app.use(cookieParser());
+
 app.use(
   cors({
-    origin: process.env.CLIENT_URL, // frontend URL
-    credentials: true, // allow cookies
+    origin: process.env.CLIENT_URL,
+    credentials: true,
   })
 );
 
